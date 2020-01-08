@@ -1,0 +1,19 @@
+<% provide(:title, "Home") %>
+<% provide(:posts, Post.all)%>
+<h1>Gossiper</h1>
+
+<br>
+<hr>
+<br>
+
+<% if !logged_in %>
+  <p><strong> You are a visitor. You can currently see posts, but you need to <a href="/login">login</a> to see who wrote them.</strong></p>
+<% else %>
+  <p>Welcome, <%= current_user.name %>.</p>
+<% end %>
+
+<br>
+<hr>
+
+<h2>Recent Posts</h2>
+ <%= render 'posts/posts' %>

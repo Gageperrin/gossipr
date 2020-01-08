@@ -1,0 +1,8 @@
+<%= form_for(@post) do |f| %>
+<div class="col-md-8">
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Put some juicy gossip here" %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+</div>
+<% end %>

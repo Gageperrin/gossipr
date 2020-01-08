@@ -1,17 +1,20 @@
 <% provide(:title, "Home") %>
+<% provide(:posts, Post.all)%>
 <h1>Gossiper</h1>
-
-<br>
-<hr>
-<br>
-
-<% if !logged_in? %>
-  <p><strong> You are a visitor. You can currently see posts, but you need to <a href="/login">login</a> to see who wrote them.</strong></p>
+<% if logged_in? %>
+  <p>Welcome, <%= current_user.name %>!</p>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="post_form">
+        <%= render 'shared/post_form' %>
+      </section>
+    </aside>
+  </div>
 <% else %>
-  <p>Welcome, <%= current_user.name %>.</p>
+<p><strong> You are a visitor. You can currently see posts, but you need to <a href="/login">login</a> to see who wrote them.</strong></p>
 <% end %>
 
 <br>
-<hr>
 
-<h2>Recent Posts</h2>
+  <h2>Juicy Tidbits</h2>
+  <%= render 'posts/posts' %>

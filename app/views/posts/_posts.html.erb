@@ -1,0 +1,19 @@
+<div class="card-columns">
+  <% @posts = Post.all %>
+  <% @posts.each do |post| %>
+    <hr>
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text">
+          <%= post.content%>
+        </p>
+      </div>
+      <% if logged_in? %>
+        <%= @post.user.name%>
+      <% else %>
+        <em class="text-black-50">(Anonymous)</em>
+      <% end %>
+    </div>
+  <% end %>
+  <hr>
+</div>

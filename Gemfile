@@ -5,7 +5,7 @@ ruby '2.6.4'
 
 gem 'rails-controller-testing'
 
-gem 'bootstrap-sass', '3.3.7'
+gem 'bootstrap-sass', '3.4.1'
 gem 'will_paginate',           '3.1.6'
 gem 'bootstrap-will_paginate', '1.0.0'
 
